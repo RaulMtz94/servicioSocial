@@ -1,3 +1,55 @@
-<h1>
-  {{title}}
-</h1>
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-8 mx-auto">
+      <div class="card card-signin my-5">
+        <div class="card-body">
+            <form [formGroup]="profileForm" (ngSubmit)="onSubmit()" >
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Nombre del Brigadista:</label>
+                  <input required type="text"  formControlName="name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nombre del Brigadista">
+                  <small id="emailHelp" class="form-text text-muted">Nombre completo del Brigadista con acentos</small>
+                </div>
+                <div class="form-group">
+                    <label for="sel1">Selecciona la modalidad:</label>
+                    <select class="form-control" formControlName="modality" id="sel1">
+                      <option>Unidiciplinaria</option>
+                      <option>Multidiciplinaria</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="experience">Experiencia:</label>
+                    <input required type="text"  formControlName="experience" class="form-control" id="experience" aria-describedby="experience" placeholder="Experiencia">
+                    <small id="experiencia" class="form-text text-muted">Experiencia del Brigadista</small>
+                </div>
+                <div class="form-group">
+                    <label for="sel2">Carrera:</label>
+                    <select class="form-control" formControlName="career" id="sel2">
+                      <option>Ingeniería de Software</option>
+                      <option>Ingeniería Civil</option>
+                      <option>Ingeniería Geodésica</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="adviser">Asesor:</label>
+                    <input required type="text"  formControlName="adviser" class="form-control" id="adviser" aria-describedby="experience" placeholder="Asesor">
+                    <small id="adviser" class="form-text text-muted">Asesor del Brigadista</small>
+                </div>
+                <div class="form-group">
+                    <label for="cycle">Ciclo:</label>
+                    <input required type="text"  formControlName="cycle" class="form-control" id="cycle" aria-describedby="cycle" placeholder="Ciclo">
+                    <small id="cycle" class="form-text text-muted">Ciclo</small>
+                </div>
+                <h5>Vigencia del documento</h5>
+                <div class="form-group">
+                  <input type="date" formControlName="vence">
+                </div>
+                
+                <button type="submit" class="btn btn-primary">Crear carta</button>
+              </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
